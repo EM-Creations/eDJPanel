@@ -10,7 +10,7 @@ public class EDjPanelApplication {
 	private static ConfigurableApplicationContext context;
 
 	public static void main(String[] args) {
-		SpringApplication.run(EDjPanelApplication.class, args);
+		context = SpringApplication.run(EDjPanelApplication.class, args);
 	}
 	
 	public static void restart() {
