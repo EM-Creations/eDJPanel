@@ -14,19 +14,19 @@ public class EDjPanelApplication {
 	private static ConfigurableApplicationContext context;
 
 	public static void main(String[] args) {
-		context = SpringApplication.run(EDjPanelApplication.class, args);
+		EDjPanelApplication.context = SpringApplication.run(EDjPanelApplication.class, args);
 	}
 	
 	public static void restart() {
-		if (null == context) {
+		if (null == EDjPanelApplication.context) {
 			log.error("Only 1 restart of the application is supported at this time, please manually restart the application if required.");
 			System.exit(0);
 		} else {
-	        ApplicationArguments args = context.getBean(ApplicationArguments.class);
+	        ApplicationArguments args = EDjPanelApplication.context.getBean(ApplicationArguments.class);
 	
 	        Thread thread = new Thread(() -> {
-	            context.close();
-	            context = SpringApplication.run(EDjPanelApplication.class, args.getSourceArgs());
+	        	EDjPanelApplication.context.close();
+	        	EDjPanelApplication.context = SpringApplication.run(EDjPanelApplication.class, args.getSourceArgs());
 	        });
 	
 	        thread.setDaemon(false);
