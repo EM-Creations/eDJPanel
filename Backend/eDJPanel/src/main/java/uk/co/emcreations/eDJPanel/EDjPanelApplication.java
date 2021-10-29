@@ -6,7 +6,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
 import lombok.extern.log4j.Log4j2;
-import uk.co.emcreations.eDJPanel.controller.HealthCheckController;
 
 @SpringBootApplication
 @Log4j2
