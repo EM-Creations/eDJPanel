@@ -16,7 +16,7 @@ class EDjPanelApplicationTests {
 	private HealthCheckController healthCheckController;
 
 	@Test
-	public void contextLoads() throws Exception {
+	public void whenContextLoadsExpectIsNotNull() throws Exception {
 		assertThat(healthCheckController).isNotNull();
 	}
 
