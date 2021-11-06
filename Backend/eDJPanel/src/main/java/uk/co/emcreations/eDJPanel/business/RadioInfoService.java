@@ -8,15 +8,18 @@ import java.util.stream.StreamSupport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import lombok.extern.log4j.Log4j2;
 import uk.co.emcreations.eDJPanel.model.RadioInfo;
 import uk.co.emcreations.eDJPanel.persistence.RadioInfoRepository;
 
 @Service
+@Log4j2
 public class RadioInfoService {
 	@Autowired
 	private RadioInfoRepository radioInfoRepository;
 	
 	public List<RadioInfo> findAll() {
+		log.info("Find all called.");
 		Iterable<RadioInfo> it = radioInfoRepository.findAll();
 		
 		return StreamSupport.stream(it.spliterator(), false)
@@ -24,16 +27,19 @@ public class RadioInfoService {
 	}
 	
 	public RadioInfo findOneById(long id) {
+		log.info("Find by one called.");
 		Optional<RadioInfo> radioInfo = radioInfoRepository.findById(id);
 		
 		return radioInfo.orElse(new RadioInfo());
 	}
 	
 	public long count() {
+		log.info("Count called.");
 		return radioInfoRepository.count();
 	}
 	
-	public void deleteById(Long id) {
+	public void deleteById(long id) {
+		log.info("Delete by ID called.");
         radioInfoRepository.deleteById(id);
     }
 }
