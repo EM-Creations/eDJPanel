@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 
 import lombok.extern.log4j.Log4j2;
 import uk.co.emcreations.eDJPanel.business.RadioInfoService;
-import uk.co.emcreations.eDJPanel.controller.RadioInfoController;
 import uk.co.emcreations.eDJPanel.model.RadioInfo;
 
 @Component
