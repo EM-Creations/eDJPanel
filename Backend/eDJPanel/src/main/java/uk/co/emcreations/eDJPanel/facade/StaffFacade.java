@@ -6,33 +6,33 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import lombok.extern.log4j.Log4j2;
-import uk.co.emcreations.eDJPanel.business.RadioInfoService;
-import uk.co.emcreations.eDJPanel.model.RadioInfo;
+import uk.co.emcreations.eDJPanel.business.StaffService;
+import uk.co.emcreations.eDJPanel.model.Staff;
 
 @Component
 @Log4j2
-public class RadioInfoFacade {
+public class StaffFacade {
 	@Autowired
-	private RadioInfoService radioInfoService;
+	private StaffService staffService;
 	
-	public List<RadioInfo> findAll() {
+	public List<Staff> findAll() {
 		log.trace("Find all called.");
-		return radioInfoService.findAll();
+		return staffService.findAll();
 	}
 	
-	public RadioInfo findOneById(long id) {
+	public Staff findOneById(long id) {
 		log.trace("Find by one called.");
-		return radioInfoService.findOneById(id);
+		return staffService.findOneById(id);
 	}
 	
 	public long count() {
 		log.trace("Count called.");
-		return radioInfoService.count();
+		return staffService.count();
 	}
 	
 	public void deleteById(long id) {
 		log.trace("Delete by ID called.");
-        radioInfoService.deleteById(id);
+        staffService.deleteById(id);
     }
 
 }

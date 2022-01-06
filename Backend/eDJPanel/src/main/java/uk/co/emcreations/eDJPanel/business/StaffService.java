@@ -9,37 +9,37 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import lombok.extern.log4j.Log4j2;
-import uk.co.emcreations.eDJPanel.model.RadioInfo;
-import uk.co.emcreations.eDJPanel.persistence.RadioInfoRepository;
+import uk.co.emcreations.eDJPanel.model.Staff;
+import uk.co.emcreations.eDJPanel.persistence.StaffRepository;
 
 @Service
 @Log4j2
-public class RadioInfoService {
+public class StaffService {
 	@Autowired
-	private RadioInfoRepository radioInfoRepository;
+	private StaffRepository staffRepository;
 	
-	public List<RadioInfo> findAll() {
+	public List<Staff> findAll() {
 		log.trace("Find all called.");
-		Iterable<RadioInfo> it = radioInfoRepository.findAll();
+		Iterable<Staff> it = staffRepository.findAll();
 		
 		return StreamSupport.stream(it.spliterator(), false)
 				.collect(Collectors.toList());
 	}
 	
-	public RadioInfo findOneById(long id) {
+	public Staff findOneById(long id) {
 		log.trace("Find by one called.");
-		Optional<RadioInfo> radioInfo = radioInfoRepository.findById(id);
+		Optional<Staff> staff = staffRepository.findById(id);
 		
-		return radioInfo.orElse(new RadioInfo());
+		return staff.orElse(new Staff());
 	}
 	
 	public long count() {
 		log.trace("Count called.");
-		return radioInfoRepository.count();
+		return staffRepository.count();
 	}
 	
 	public void deleteById(long id) {
 		log.trace("Delete by ID called.");
-        radioInfoRepository.deleteById(id);
+		staffRepository.deleteById(id);
     }
 }
