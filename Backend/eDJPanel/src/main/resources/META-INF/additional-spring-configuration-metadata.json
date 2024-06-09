@@ -1,0 +1,22 @@
+{"properties": [
+  {
+    "name": "eDJPanel.env.name",
+    "type": "java.lang.String",
+    "description": "Environment name'"
+  },
+  {
+    "name": "eDJPanel.locale.language",
+    "type": "java.lang.String",
+    "description": "Language"
+  },
+  {
+    "name": "eDJPanel.locale.country",
+    "type": "java.lang.String",
+    "description": "Country"
+  },
+  {
+    "name": "eDJPanel.version",
+    "type": "java.lang.String",
+    "description": "Version"
+  }
+]}
